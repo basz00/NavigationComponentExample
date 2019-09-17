@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/firstFragment"
-        android:name="com.baz.navcomex.FirstFragment"
+        android:name="com.baz.navcomex.first.FirstFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/firstDetailsFragment"
-        android:name="com.baz.navcomex.FirstDetailsFragment"
+        android:name="com.baz.navcomex.first.FirstDetailsFragment"
         android:label="fragment_first_details"
         tools:layout="@layout/fragment_first_details" />
 </navigation>

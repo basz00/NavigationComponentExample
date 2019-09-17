@@ -1,14 +1,16 @@
-package com.baz.navcomex
+package com.baz.navcomex.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.MutableLiveData
+import android.util.Log
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
-import kotlinx.android.synthetic.main.activity_main.*
+import com.baz.navcomex.R
+import com.baz.navcomex.injection.DummyDependency
+import dagger.android.support.DaggerAppCompatActivity
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
+
 
     lateinit var navigationController: NavController
 

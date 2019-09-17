@@ -1,21 +1,28 @@
-package com.baz.navcomex
+package com.baz.navcomex.main
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.baz.navcomex.R
+import com.baz.navcomex.injection.DummyDependency
+import com.baz.navcomex.setupWithNavController
+import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_main.*
+import javax.inject.Inject
 
 /**
  * A simple [Fragment] subclass.
  */
-class MainFragment : Fragment() {
+class MainFragment : DaggerFragment() {
 
+    @Inject
+    internal lateinit var dummyDependency: DummyDependency
     private val mainActivity by lazy { activity as MainActivity }
 
     override fun onCreateView(
@@ -40,5 +47,6 @@ class MainFragment : Fragment() {
             mainActivity.navigationController = it
             mainActivity.setupActionBarWithNavController(mainActivity.navigationController)
         })
+        Log.i("baywatch", dummyDependency.toString())
     }
 }
