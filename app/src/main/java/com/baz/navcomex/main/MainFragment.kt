@@ -47,6 +47,6 @@ class MainFragment : DaggerFragment() {
             mainActivity.navigationController = it
             mainActivity.setupActionBarWithNavController(mainActivity.navigationController)
         })
-        Log.i("baywatch", dummyDependency.toString())
+        Log.i("watchThis", "$dummyDependency in $this")
     }
 }

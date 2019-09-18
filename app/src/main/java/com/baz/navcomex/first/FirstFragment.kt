@@ -10,13 +10,14 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.baz.navcomex.R
 import com.baz.navcomex.injection.DummyDependency
+import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_first.*
 import javax.inject.Inject
 
-/**
- * A simple [Fragment] subclass.
- */
-class FirstFragment : Fragment() {
+class FirstFragment : DaggerFragment() {
+
+    @Inject
+    internal lateinit var dummyDependency: DummyDependency
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,5 +31,6 @@ class FirstFragment : Fragment() {
         goToFirstDetailsButton.setOnClickListener {
             findNavController().navigate(R.id.action_firstFragment_to_firstDetailsFragment)
         }
+        Log.i("watchThis", "$dummyDependency in $this")
     }
 }
